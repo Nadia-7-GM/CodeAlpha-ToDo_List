@@ -23,4 +23,4 @@ This project helps users manage daily tasks efficiently with an interactive and 
 
 ## 📌 Author
 Nadia
->>>>>>> 0cedf53 (updated readme)
+
