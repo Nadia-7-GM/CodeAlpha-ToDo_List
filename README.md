@@ -1,6 +1,6 @@
-# TaskPro - CodeAlpha Internship Project
+# TODO List - CodeAlpha Internship Project
 
-#Live Demo: 
+#Live Demo: https://nadia-7-gm.github.io/CodeAlpha-ToDo_List/
 TaskPro is a modern task management web application developed as part of the CodeAlpha Internship Program.
 
 ## 🚀 Features
