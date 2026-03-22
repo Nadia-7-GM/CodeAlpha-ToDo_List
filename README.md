@@ -1,3 +1,5 @@
+
+=======
 # TODO List - CodeAlpha Internship Project
 
 #Live Demo: https://nadia-7-gm.github.io/CodeAlpha-ToDo_List/
@@ -21,3 +23,4 @@ This project helps users manage daily tasks efficiently with an interactive and 
 
 ## 📌 Author
 Nadia
+>>>>>>> 0cedf53 (updated readme)
