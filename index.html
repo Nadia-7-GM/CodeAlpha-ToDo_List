@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TaskPro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+<h2>TaskPro</h2>
+
+<button onclick="showTab('tasks')">Tasks</button>
+<button onclick="showTab('important')">Important</button>
+<button onclick="showTab('planned')">Planned</button>
+<button onclick="showTab('today')">Today</button>
+<button onclick="showTab('upcoming')">Upcoming</button>
+<button onclick="showTab('timer')">Timer</button>
+<button onclick="showTab('notifications')">Notifications</button>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- TOPBAR -->
+<div class="topbar">
+<h2>Dashboard</h2>
+<button class="themeBtn" onclick="toggleTheme()">🌙</button>
+</div>
+
+<!-- TASKS -->
+<div id="tasks" class="tab">
+<div class="sortBar">
+<select onchange="setSort(this.value)">
+<option value="default">Sort</option>
+<option value="az">A → Z</option>
+<option value="date">Nearest Date</option>
+</select>
+</div>
+
+<div id="taskList"></div>
+
+<div class="addBar">
+<input id="taskInput" placeholder="Task title">
+<input type="date" id="taskDate">
+<input type="time" id="taskReminder">
+<select id="taskRepeat">
+<option value="">Repeat</option>
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+</select>
+<button onclick="addTask()">Add</button>
+</div>
+</div>
+
+<!-- IMPORTANT -->
+<div id="important" class="tab hidden">
+<h2>Important</h2>
+<div id="importantList"></div>
+</div>
+
+<!-- PLANNED -->
+<div id="planned" class="tab hidden">
+<h2>Planned</h2>
+<div id="plannedList"></div>
+</div>
+
+<!-- TODAY -->
+<div id="today" class="tab hidden">
+<h2>Today</h2>
+<div id="todayList"></div>
+</div>
+
+<!-- UPCOMING -->
+<div id="upcoming" class="tab hidden">
+<h2>Upcoming</h2>
+<div id="upcomingList"></div>
+</div>
+
+<!-- TIMER -->
+<div id="timer" class="tab hidden">
+<h2>Timer</h2>
+<input id="timerInput" placeholder="Seconds">
+<button onclick="startTimer()">Start</button>
+
+<h2>Stopwatch</h2>
+
+<p id="stopwatch">00:00:00</p>
+
+
+<button onclick="startStopwatch()">Start</button>
+<button onclick="stopStopwatch()">Pause</button>
+<button onclick="resetStopwatch()">Reset</button>
+
+<!-- NOTIFICATIONS -->
+<div id="notifications" class="tab hidden">
+<h2>Notifications</h2>
+<ul id="notifList"></ul>
+</div>
+
+</div>
+</div>
+
+<!-- TASK EDITOR PANEL -->
+<div id="taskEditor" class="editor">
+
+<h3>Edit Task</h3>
+
+<div class="form-group">
+<label>Title</label>
+<input id="editTitle">
+</div>
+
+<div class="form-group">
+<label>Due Date</label>
+<input type="date" id="editDate">
+</div>
+
+<div class="form-group">
+<label>Reminder Time</label>
+<input type="time" id="editReminder">
+</div>
+
+<div class="form-group">
+<label>Repeat</label>
+<select id="editRepeat">
+<option value="">None</option>
+<option value="daily">Daily</option>
+<option value="weekly">Weekly</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Ringtone</label>
+<select id="editTone">
+<option value="default">Default</option>
+<option value="beep">Beep</option>
+<option value="bell">Bell</option>
+</select>
+</div>
+
+<h4>Category</h4>
+<div id="colorPicker" class="color-picker">
+  <div class="color-ball" data-color="blue" style="background:#3b82f6;"></div>
+  <div class="color-ball" data-color="green" style="background:#22c55e;"></div>
+  <div class="color-ball" data-color="red" style="background:#f87171;"></div>
+  <div class="color-ball empty" data-color=""></div>
+</div>
+
+<h4>Steps</h4>
+<div id="stepsList" class="steps"></div>
+
+<div class="stepInputBox">
+<input id="stepInput" placeholder="Add step...">
+<button onclick="addStep()">+</button>
+</div>
+
+<h4>Attach File</h4>
+<input type="file" id="fileInput">
+
+<div class="editor-actions">
+<button onclick="saveEdit()">Save</button>
+<button onclick="closeEditor()">Cancel</button>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
